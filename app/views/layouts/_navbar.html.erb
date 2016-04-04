@@ -19,6 +19,14 @@
       <li>
         <a href="/orders">Orders</a>
       </li>
+      <li>
+        <% if current_user %>
+          hello, <%= current_user.name %>.
+          <%= link_to "Logout", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign in with Twitter", twitter_login_path %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>
